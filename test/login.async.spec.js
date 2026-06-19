@@ -1,4 +1,6 @@
 const { Builder, By, until } = require('selenium-webdriver');
+const { UserDto } = require('./dto/user-dto');
+
 
 describe('Login com Selenium usando async/await', function () {
   this.timeout(30000);
@@ -16,9 +18,11 @@ describe('Login com Selenium usando async/await', function () {
   });
 
   it('deve permitir logar no Sauce Demo', async function () {
+    let user = new UserDto('standard_user', 'secret_sauce', 'rua', 300, '00000000', '123123444')
+
     await driver.get('https://www.saucedemo.com/');
-    await driver.findElement(By.id('user-name')).sendKeys('standard_user');
-    await driver.findElement(By.id('password')).sendKeys('secret_sauce');
+    await driver.findElement(By.id('user-name')).sendKeys(user.username);
+    await driver.findElement(By.id('password')).sendKeys(user.password);
     await driver.findElement(By.id('login-button')).click();
     await driver.wait(until.urlContains('inventory.html'), 10000);
 

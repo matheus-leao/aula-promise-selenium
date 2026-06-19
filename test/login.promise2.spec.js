@@ -22,7 +22,7 @@ describe("Login com Selenium usando promise chain", function () {
     return driver.quit();
   });
 
-  it.only("deve permitir logar no Sauce Demo", function () {
+  it("deve permitir logar no Sauce Demo", function () {
     return driver
       .get("https://www.saucedemo.com/")
       .then(() => {
@@ -37,7 +37,6 @@ describe("Login com Selenium usando promise chain", function () {
             throw new Error(`Título inesperado: ${title}`);
           }
         });
-      })
-      console.log('executa antes da promise terminar?')
+      });
   });
 });
