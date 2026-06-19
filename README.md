@@ -1,9 +1,36 @@
-# Aula Selenium + Mocha
+# Aula: Promises vs Async/Await com Selenium
 
-Este projeto mostra, com um exemplo simples de login na aplicação pública https://www.saucedemo.com/, duas formas de escrever testes com Selenium em JavaScript:
+Este repositório reúne exemplos usados em aula para comparar duas formas comuns de lidar com operações assíncronas em JavaScript:
 
-- `promise`: encadeamento com `then()`
-- `async`: uso de `async/await`
+- Promise com encadeamento de `then()` e `catch()`
+- `async/await` para escrever o mesmo fluxo de forma mais linear
+
+O foco prático é um teste automatizado de login no Sauce Demo usando Selenium WebDriver e Mocha.
+
+![Mapa mental da aula](docs/image.png)
+
+## O que tem aqui
+
+- `test/login.promise.spec.js` mostra o teste com encadeamento de Promise.
+- `test/login.promise2.spec.js` traz uma variação adicional do mesmo tema.
+- `test/login.async.spec.js` mostra o teste com `async/await`.
+- `test/dto/user-dto.js` guarda o DTO usado no teste com `async/await`.
+
+## Conceitos abordados
+
+- Uma Promise representa uma operação assíncrona que pode ficar `pending`, `resolved` ou `rejected`.
+- `then()` encadeia passos quando a Promise é resolvida.
+- `async/await` deixa o fluxo assíncrono mais próximo da leitura de código síncrono.
+- Em testes, `await` costuma deixar o passo a passo mais fácil de acompanhar.
+
+## O que os testes fazem
+
+Os testes acessam https://www.saucedemo.com/, preenchem usuário e senha e validam se a página principal aparece após o login.
+
+Credenciais usadas no exemplo:
+
+- usuário: `standard_user`
+- senha: `secret_sauce`
 
 ## Pré-requisitos
 
@@ -24,16 +51,12 @@ npm run async
 npm test
 ```
 
-## O que o exemplo faz
+## Scripts disponíveis
 
-Os dois testes acessam o login do Sauce Demo, preenchem usuário e senha e validam se a página principal aparece após o login.
+- `npm run promise` executa `test/login.promise.spec.js`
+- `npm run async` executa `test/login.async.spec.js`
+- `npm test` executa todos os testes em `test/**/*.spec.js`
 
-Credenciais usadas no exemplo:
+## Observação
 
-- usuário: `standard_user`
-- senha: `secret_sauce`
-
-## Estrutura
-
-- `test/login.promise.spec.js` mostra a versão com promise chain.
-- `test/login.async.spec.js` mostra a versão com `async/await`.
+O arquivo `test/login.promise2.spec.js` está mantido como variação de estudo do mesmo conteúdo, então o comando `npm test` o inclui junto com os outros testes.
