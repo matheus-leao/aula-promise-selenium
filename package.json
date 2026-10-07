@@ -23,5 +23,6 @@
   "devDependencies": {
     "mocha": "^11.0.0",
     "selenium-webdriver": "^4.24.0"
-  }
+  },
+  "type": "module"
 }

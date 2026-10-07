@@ -18,6 +18,7 @@ O foco prático é um teste automatizado de login no Sauce Demo usando Selenium 
 
 ## Conceitos abordados
 
+- O projeto usa módulos ES nativos do Node.js (`"type": "module"`), com `import` e `export`.
 - Uma Promise representa uma operação assíncrona que pode ficar `pending`, `resolved` ou `rejected`.
 - `then()` encadeia passos quando a Promise é resolvida.
 - `async/await` deixa o fluxo assíncrono mais próximo da leitura de código síncrono.

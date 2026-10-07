@@ -1,5 +1,5 @@
-const { Builder, By, until } = require('selenium-webdriver');
-const { UserDto } = require('./dto/user-dto');
+import { Builder, By, until } from 'selenium-webdriver';
+import { UserDto } from './dto/user-dto.js';
 
 
 describe('Login com Selenium usando async/await', function () {

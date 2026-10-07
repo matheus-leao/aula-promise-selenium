@@ -1,4 +1,4 @@
-class UserDto {
+export class UserDto {
   username
   password
   rua
@@ -15,5 +15,3 @@ class UserDto {
     this.cep = cep
   }
 }
-
-module.exports = { UserDto };

@@ -1,4 +1,4 @@
-const { Builder, By, until } = require("selenium-webdriver");
+import { Builder, By, until } from "selenium-webdriver";
 
 describe("Login com Selenium usando promise chain", function () {
   this.timeout(30000);
