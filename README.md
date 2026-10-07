@@ -2,7 +2,7 @@
 
 Este repositório reúne exemplos usados em aula para comparar duas formas comuns de lidar com operações assíncronas em JavaScript:
 
-- Promise com encadeamento de `then()` e `catch()`
+- Promise com encadeamento de `then()`
 - `async/await` para escrever o mesmo fluxo de forma mais linear
 
 O foco prático é um teste automatizado de login no Sauce Demo usando Selenium WebDriver e Mocha.
@@ -12,9 +12,8 @@ O foco prático é um teste automatizado de login no Sauce Demo usando Selenium 
 ## O que tem aqui
 
 - `test/login.promise.spec.js` mostra o teste com encadeamento de Promise.
-- `test/login.promise2.spec.js` traz uma variação adicional do mesmo tema.
 - `test/login.async.spec.js` mostra o teste com `async/await`.
-- `test/dto/user-dto.js` guarda o DTO usado no teste com `async/await`.
+- `test/dto/user-dto.js` guarda um DTO simples usado no fluxo com `async/await`.
 
 ## Conceitos abordados
 
@@ -22,7 +21,7 @@ O foco prático é um teste automatizado de login no Sauce Demo usando Selenium 
 - Uma Promise representa uma operação assíncrona que pode ficar `pending`, `resolved` ou `rejected`.
 - `then()` encadeia passos quando a Promise é resolvida.
 - `async/await` deixa o fluxo assíncrono mais próximo da leitura de código síncrono.
-- Em testes, `await` costuma deixar o passo a passo mais fácil de acompanhar.
+- Em testes automatizados, `await` costuma deixar o passo a passo mais fácil de acompanhar.
 
 ## O que os testes fazem
 
@@ -60,4 +59,4 @@ npm test
 
 ## Observação
 
-O arquivo `test/login.promise2.spec.js` está mantido como variação de estudo do mesmo conteúdo, então o comando `npm test` o inclui junto com os outros testes.
+O projeto mantém os dois fluxos principais comparados em aula: o exemplo com encadeamento de Promise e o exemplo com `async/await`.
