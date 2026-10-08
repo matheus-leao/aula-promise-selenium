@@ -24,5 +24,8 @@
     "mocha": "^11.0.0",
     "selenium-webdriver": "^4.24.0"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "chromedriver": "^155.0.0"
+  }
 }
