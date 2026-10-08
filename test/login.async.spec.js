@@ -7,7 +7,7 @@ describe('Login com Selenium usando async/await', function () {
 
   let driver;
 
-  before(async function () {
+  before(async () => {
     driver = await new Builder().forBrowser('chrome').build();
   });
 

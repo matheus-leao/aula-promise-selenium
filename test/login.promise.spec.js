@@ -1,11 +1,10 @@
 import { Builder, By, until } from "selenium-webdriver";
 
-describe("Login com Selenium usando promise chain", function () {
-  this.timeout(30000);
+describe("Login com Selenium usando promise chain", () => {
 
   let driver;
 
-  before(function () {
+  before(()=> {
     return new Builder()
       .forBrowser("chrome")
       .build()
@@ -14,7 +13,7 @@ describe("Login com Selenium usando promise chain", function () {
       });
   });
 
-  after(function () {
+  after(() => {
     if (!driver) {
       return undefined;
     }
@@ -22,7 +21,7 @@ describe("Login com Selenium usando promise chain", function () {
     return driver.quit();
   });
 
-  it("deve permitir logar no Sauce Demo", function () {
+  it("deve permitir logar no Sauce Demo", () => {
     return driver
       .get("https://www.saucedemo.com/")
       .then(() => {
